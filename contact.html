@@ -24,7 +24,7 @@
     </header>
     <div style="width:1000px;margin-left: auto;margin-right: auto;">
         <aside id="leftmenu">
-            <a href="index.html"><img src="images/bethanylogo.png" /></a>
+            <a href="index.html"><img src="images/bethanylogo.png"></a>
 
             <header>
                 <h4 style="text-align: center;">Browse our pies</h4>
@@ -37,51 +37,77 @@
             </ul>
         </aside>
         <main id="main">
-           <h1>Contact Us</h1>
-           <form action="contact.html" method="post" enctype="application/x-www-form-urlencoded">
-                <fieldset>  
+            <h1>Contact Us</h1>
+            <form action="contact.html" method="POST" enctype="application/x-www-form-urlencoded">
+                <fieldset>
                     <legend>Contact Information</legend>
-                    <label for="nameField">Your name: </label> 
-                        <input id="nameField" type="text" name="customerName"><br/>
-                    Your email: <input type="email" name="customerEmail"><br/>
-                    Your phone: <input type="tel" name="customerPhone">
+                    <p>
+                        <label for="nameField">*Your name: </label>
+                        <input id="nameField" type="text" required minlength="2"
+                        maxlength="75" name="customerName">
+                    </p>
+                    <p>
+                        <label for="customerEmail">Your email: </label>
+                        <input type="email" name="customerEmail" id="customerEmail">
+                    </p>
+                    <p><label for="customerPhone">Your phone: </label>
+                        <input type="tel" pattern="\(\d{3}\) \(\d{3}-\d{4})" name="customerPhone" id="customerPhone"></p>
+                    <p>
+                        <label>Phone type: </label>
+                    </p>
+
                     <label><input type="radio" name="phoneType" value="cell">Cell</label>
                     <label><input type="radio" name="phoneType" value="work">Work</label>
-                    <label><input type="radio" name="phoneType" value="home">Home </label>
-                    <br>
+                    <label><input type="radio" name="phoneType" value="home">Home</label>
+                    <p>
+                        Ok to contact me:
+                        <label><input type="checkbox" name="okToContact" value="phone"> by phone</label>
+                        <label><input type="checkbox" name="okToContact" value="email"> by email</label>
 
-                    Ok to contact me:
-                    <input type="checkbox" name="okToContact" value="phone"> by phone
-                    <input type="checkbox" name="okToContact" value="email"> by email
-                    <br>
-                    <input type="hidden" name="source" value="contactForm">
-                    </fieldset>
-                    
-                    <fieldset>
+                    </p>
+                </fieldset>
+
+                <input type="hidden" name="source" value="ContactForm">
+                <fieldset>
                     <legend>Feedback</legend>
-                    <textarea tabindex="1" name="feedbackText" cols="40" rows="3"></textarea> <br>
-                    Feedback type: <select tabindex="2" name="feedbackType" multiple="multiple" size="6">
-                        <optgroup label="Stores">
-                            <option value="webstore">Web Store</option>
-                            <option value="store">Physical Store</option>
-                        </optgroup>
-                        <option value="webtech">Website Issue</option>
-                        <option value="general">General Feedback</option>
+                    <p>
+                        <textarea required tabindex="1" name="feedbackText" cols="40" rows="3"></textarea>
+                    </p>
+                    <p>
+                        <label for="feedbackType">Feedback type: </label><select tabindex="2" name="feedbackType" multiple="multiple" size="6" id="feedbackType">
+                            <optgroup label="Stores">
+                                <option value="webstore">Web Store</option>
+                                <option value="store">Physical Store</option>
+                            </optgroup>
+                            <option value="webtech">Website Issue</option>
+                            <option value="general">General Feedback</option>
+                        </select>
+                    </p>
 
-                        </select> <br>     
-                    <!-- Severity: <input type="range" min="1" max="10" name="range"><br/> -->
-                    Severity: <input tabindex="3" type="number" min="1" max="10" name="severity"><br/>
-                    Issue Date: <input tabindex="4" type="date" name="issueDate"><br/>
-                    Issue Time: <input tabindex="5" type="time" name="issueTime"><br/>
-                </fieldset> 
-                <input type="submit" value="Send Contact">
-           </form>
+                    <p><label for="severityRange">Severity: </label>
+                        <input tabindex="3" type="range" min="1" max="10" name="severityRange" id="severityRange">
+                    </p>
+                    <p><label for="severity">Severity: </label>
+                        <input tabindex="4" type="number" min="1" max="10" name="severity" id="severity">
+                    </p>
+                    <p>
+                        <label for="issueDate">Issue date: </label>
+                        <input tabindex="5" type="date" name="issueDate" id="issueDate">
+                    </p>
+                    <p>
+                        <label for="issueTime">Issue time: </label>
+                        <input tabindex="6" type="time" name="issueTime" id="issueTime">
+                    </p>
+
+                </fieldset>
+                <input type="submit" value="SendContact">
+            </form>
         </main>
 
         <footer>
-            <p>Our address is <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
-            </p>
-            <p><small>&copy; 2020 Bethany's Pie Shop - All rights reserved</small></p>
+            <p>Our address is </p><address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
+            <p></p>
+            <p><small>© 2020 Bethany's Pie Shop - All rights reserved</small></p>
             <p>Contact us via <a href="mailto:info@bethanyspieshop.com">email</a></p>
             <p><small><a href="https://www.snowball.be">Created by Snowball</a></small></p>
         </footer>
